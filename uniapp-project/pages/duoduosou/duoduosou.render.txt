@@ -1,0 +1,288 @@
+// duoduosou.vue 的原始渲染函数（还原前的编译产物，模板若有 <!-- TODO --> 请对照这里手工补全）
+
+e.openBlock(), e.createElementBlock("view", {
+            class: "page"
+          }, [e.createElementVNode("view", {
+            class: "hdr flex-between"
+          }, [e.createElementVNode("text", {
+            class: "hdr-back",
+            onClick: C
+          }, "← 返回"), e.createElementVNode("text", {
+            class: "hdr-title"
+          }, "多多盘"), e.createElementVNode("text", {
+            class: "hdr-right",
+            onClick: D
+          }, "账户")]), e.createElementVNode("view", {
+            class: "mode-tabs"
+          }, [e.createElementVNode("view", {
+            class: e.normalizeClass(["mode-tab", {
+              on: a.value
+            }]),
+            onClick: T
+          }, [e.createElementVNode("text", {
+            class: "mode-tab-name"
+          }, "影视"), e.createElementVNode("text", {
+            class: "mode-tab-desc"
+          }, "电影 · 剧集 · 番剧 · 日韩 · 欧美")], 2), e.createElementVNode("view", {
+            class: e.normalizeClass(["mode-tab", {
+              on: !a.value
+            }]),
+            onClick: U
+          }, [e.createElementVNode("text", {
+            class: "mode-tab-name"
+          }, "网盘"), e.createElementVNode("text", {
+            class: "mode-tab-desc"
+          }, "搜索网盘资源（夸克/百度/迅雷/UC）— 广播剧/有声剧/小说/漫画")], 2)]), a.value ? (e.openBlock(), e.createElementBlock(e
+            .Fragment, {
+              key: 0
+            }, [e.createElementVNode("view", {
+                class: "search-bar"
+              }, [e.withDirectives(e.createElementVNode("input", {
+                class: "inp",
+                "onUpdate:modelValue": s[0] || (s[0] = e => l.value = e),
+                placeholder: "搜索电影、剧集...",
+                "confirm-type": "search",
+                onConfirm: L
+              }, null, 544), [
+                [e.vModelText, l.value]
+              ]), e.createElementVNode("button", {
+                class: "s-btn",
+                disabled: o.value || !l.value.trim(),
+                onClick: L
+              }, [o.value ? (e.openBlock(), e.createElementBlock("text", {
+                key: 0,
+                class: "btn-spin"
+              })) : e.createCommentVNode("", !0), e.createElementVNode("text", null, e
+                .toDisplayString(o.value ? "加载中" : "搜索"), 1)], 8, ["disabled"])]), e.createElementVNode(
+                "scroll-view", {
+                  "scroll-x": "",
+                  class: "cat-nav",
+                  "show-scrollbar": !1
+                }, [e.createElementVNode("view", {
+                  class: "cat-nav-inner"
+                }, [(e.openBlock(), e.createElementBlock(e.Fragment, null, e.renderList(c, (t => e
+                  .createElementVNode("view", {
+                    key: t.id,
+                    class: e.normalizeClass(["cat", {
+                      on: i.value === t.id
+                    }]),
+                    onClick: e => {
+                      return a = t.id, i.value = a, d.value = !1, m.value = 1, void I(1);
+                      var a
+                    }
+                  }, e.toDisplayString(t.label), 11, ["onClick"]))), 64))])]), o.value && !k.value.length ?
+              (e.openBlock(), e.createElementBlock("view", {
+                key: 0,
+                class: "empty"
+              }, [e.createElementVNode("text", {
+                class: "load-spin"
+              }), e.createElementVNode("text", {
+                class: "dim"
+              }, "加载中...")])) : k.value.length || "done" !== n.value ? k.value.length ? e
+              .createCommentVNode("", !0) : (e.openBlock(), e.createElementBlock("view", {
+                key: 2,
+                class: "empty"
+              }, [e.createElementVNode("text", {
+                class: "dim"
+              }, "浏览影视")])) : (e.openBlock(), e.createElementBlock("view", {
+                key: 1,
+                class: "empty"
+              }, [e.createElementVNode("text", {
+                class: "dim"
+              }, "暂无内容")])), k.value.length ? (e.openBlock(), e.createElementBlock("view", {
+                key: 3,
+                class: "movie-grid"
+              }, [(e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(k.value, ((t,
+                a) => (e.openBlock(), e.createElementBlock("view", {
+                key: a,
+                class: "m-card",
+                onClick: e => function(e) {
+                  e.detailUrl && uni.navigateTo({
+                    url: "/pages/duoduosou/movie?url=" + encodeURIComponent(e
+                      .detailUrl)
+                  })
+                }(t)
+              }, [t.cover ? (e.openBlock(), e.createElementBlock("image", {
+                key: 0,
+                class: "m-cover",
+                src: t.cover,
+                mode: "aspectFill"
+              }, null, 8, ["src"])) : (e.openBlock(), e.createElementBlock("view", {
+                key: 1,
+                class: "m-cover m-cover-ph"
+              }, [e.createElementVNode("text", {
+                class: "m-cover-ph-txt"
+              }, "🎬")])), e.createElementVNode("view", {
+                class: "m-info"
+              }, [e.createElementVNode("text", {
+                class: "m-title"
+              }, e.toDisplayString(t.title), 1), e.createElementVNode("view", {
+                class: "m-meta"
+              }, [t.score ? (e.openBlock(), e.createElementBlock("text", {
+                key: 0,
+                class: "m-score"
+              }, "★" + e.toDisplayString(t.score), 1)) : e.createCommentVNode(
+                "", !0), t.status ? (e.openBlock(), e.createElementBlock(
+                "text", {
+                  key: 1,
+                  class: "m-status"
+                }, e.toDisplayString(t.status), 1)) : e.createCommentVNode("", !
+                0)])])], 8, ["onClick"])))), 128))])) : e.createCommentVNode("", !0), d.value && p.value >
+              1 ? (e.openBlock(), e.createElementBlock("view", {
+                key: 4,
+                class: "pager"
+              }, [e.createElementVNode("view", {
+                  class: e.normalizeClass(["pager-btn", {
+                    dis: m.value <= 1
+                  }]),
+                  onClick: s[1] || (s[1] = e => m.value > 1 && M(m.value - 1))
+                }, "上一页", 2), e.createElementVNode("text", {
+                  class: "pager-info dim"
+                }, e.toDisplayString(m.value) + "/" + e.toDisplayString(p.value), 1), e
+                .createElementVNode("view", {
+                  class: e.normalizeClass(["pager-btn", {
+                    dis: m.value >= p.value
+                  }]),
+                  onClick: s[2] || (s[2] = e => m.value < p.value && M(m.value + 1))
+                }, "下一页", 2)
+              ])) : u.value && i.value && "done" === n.value ? (e.openBlock(), e.createElementBlock(
+                "view", {
+                  key: 5,
+                  class: "more-btn",
+                  onClick: P
+                }, "更多「" + e.toDisplayString(g.value) + "」>", 1)) : e.createCommentVNode("", !0)
+            ], 64)) : (e.openBlock(), e.createElementBlock(e.Fragment, {
+            key: 1
+          }, [e.createElementVNode("view", {
+              class: "search-bar"
+            }, [e.withDirectives(e.createElementVNode("input", {
+              class: "inp",
+              "onUpdate:modelValue": s[3] || (s[3] = e => l.value = e),
+              placeholder: "输入关键词搜索...",
+              "confirm-type": "search",
+              onConfirm: A
+            }, null, 544), [
+              [e.vModelText, l.value]
+            ]), e.createElementVNode("button", {
+              class: "s-btn",
+              disabled: o.value || !l.value.trim(),
+              onClick: A
+            }, [o.value ? (e.openBlock(), e.createElementBlock("text", {
+              key: 0,
+              class: "btn-spin"
+            })) : e.createCommentVNode("", !0), e.createElementVNode("text", null, e
+              .toDisplayString(o.value ? "加载中" : "搜索"), 1)], 8, ["disabled"])]), e.createElementVNode(
+              "scroll-view", {
+                "scroll-x": "",
+                class: "cat-nav",
+                "show-scrollbar": !1
+              }, [e.createElementVNode("view", {
+                class: "cat-nav-inner"
+              }, [(e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(y.value, (t =>
+                (e.openBlock(), e.createElementBlock("view", {
+                  key: t.value,
+                  class: e.normalizeClass(["cat", {
+                    on: f.value === t.value
+                  }]),
+                  onClick: e => {
+                    return a = t.value, f.value = a, N.value = 1, void(E.value.has(a) ||
+                      w.value.has(a) || !l.value.trim() || F([a]));
+                    var a
+                  }
+                }, [e.createTextVNode(e.toDisplayString(t.label) + " ", 1), E.value.has(t
+                  .value) && f.value !== t.value ? (e.openBlock(), e.createElementBlock(
+                  "text", {
+                    key: 0,
+                    class: "cat-dot"
+                  }, "✓")) : e.createCommentVNode("", !0)], 10, ["onClick"])))), 128))])]), o.value ? (e
+              .openBlock(), e.createElementBlock("view", {
+                key: 0,
+                class: "empty"
+              }, [e.createElementVNode("text", {
+                class: "dim"
+              }, "搜索中...")])) : B.value.length || "done" !== n.value ? B.value.length ? e
+            .createCommentVNode("", !0) : (e.openBlock(), e.createElementBlock("view", {
+              key: 2,
+              class: "empty"
+            }, [e.createElementVNode("text", {
+              class: "dim"
+            }, "输入关键词，搜索网盘资源")])) : (e.openBlock(), e.createElementBlock("view", {
+              key: 1,
+              class: "empty"
+            }, [e.createElementVNode("text", {
+              class: "dim"
+            }, "「" + e.toDisplayString(x(f.value)) + "」暂无结果", 1)])), S.value.length ? (e.openBlock(), e
+              .createElementBlock("view", {
+                key: 3,
+                class: "list"
+              }, [(e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(S.value, ((t,
+                a) => (e.openBlock(), e.createElementBlock("view", {
+                key: a,
+                class: e.normalizeClass(["d-card", {
+                  invalid: !1 === t.valid
+                }])
+              }, [e.createElementVNode("view", {
+                class: "d-top"
+              }, [e.createElementVNode("text", {
+                  class: "d-title"
+                }, e.toDisplayString(t.title || t.name || "无标题"), 1), e
+                .createElementVNode("text", {
+                  class: e.normalizeClass(["d-badge", "db-" + t.diskType])
+                }, e.toDisplayString(t.diskLabel || x(t.diskType)), 3)
+              ]), !1 === t.valid ? (e.openBlock(), e.createElementBlock("view", {
+                key: 0,
+                class: "d-hint fail"
+              }, "链接已失效")) : !0 === t.valid ? (e.openBlock(), e.createElementBlock(
+                "view", {
+                  key: 1,
+                  class: "d-hint ok"
+                }, "链接有效")) : e.createCommentVNode("", !0), e.createElementVNode(
+                "view", {
+                  class: "d-foot"
+                }, [t.shareUrl ? (e.openBlock(), e.createElementBlock(e.Fragment, {
+                  key: 0
+                }, [e.createElementVNode("text", {
+                  class: "d-url",
+                  "user-select": ""
+                }, e.toDisplayString(t.shareUrl), 1), e.createElementVNode(
+                  "button", {
+                    class: "btn-sm",
+                    onClick: e => function(e) {
+                      const t = String(e || "");
+                      t && uni.setClipboardData({
+                        data: t,
+                        success() {
+                          uni.showToast({
+                            title: "已复制",
+                            icon: "success"
+                          })
+                        }
+                      })
+                    }(t.shareUrl)
+                  }, "复制", 8, ["onClick"])], 64)) : (e.openBlock(), e
+                  .createElementBlock("button", {
+                      key: 1,
+                      class: "btn-sm btn-green",
+                      disabled: V.value === t.itemId,
+                      onClick: e => O(t)
+                    }, e.toDisplayString(V.value === t.itemId ? "处理中..." : "获取分享链接"),
+                    9, ["disabled", "onClick"]))])], 2)))), 128))])) : e.createCommentVNode("", !0), _
+            .value > 1 ? (e.openBlock(), e.createElementBlock("view", {
+              key: 4,
+              class: "pager"
+            }, [e.createElementVNode("view", {
+                class: e.normalizeClass(["pager-btn", {
+                  dis: N.value <= 1
+                }]),
+                onClick: s[4] || (s[4] = e => $(N.value - 1))
+              }, "上一页", 2), e.createElementVNode("text", {
+                class: "pager-info dim"
+              }, e.toDisplayString(N.value) + "/" + e.toDisplayString(_.value), 1), e
+              .createElementVNode("view", {
+                class: e.normalizeClass(["pager-btn", {
+                  dis: N.value >= _.value
+                }]),
+                onClick: s[5] || (s[5] = e => $(N.value + 1))
+              }, "下一页", 2)
+            ])) : e.createCommentVNode("", !0)
+          ], 64))])

@@ -36,6 +36,7 @@
 ```
 .
 ├── original/                       # 原始 APK（便于对照）
+├── uniapp-project/                 # ⭐ 已还原的 uni-app 工程（可直接导入 HBuilderX 修改）
 ├── decompiled/
 │   ├── apktool/                    # ① 可回编译工程
 │   │   ├── AndroidManifest.xml     #    解码后的清单文件
@@ -62,13 +63,28 @@
 
 ### 路线 A：改业务界面/接口（推荐，成本最低）
 
-真正的业务逻辑在 `decompiled/uniapp-www/__UNI__34AA080/www/`。
+真正的业务逻辑在 `decompiled/uniapp-www/__UNI__34AA080/www/`，**已还原成可直接导入 HBuilderX 的 Vue 3 单文件组件工程**，位于 `uniapp-project/`：
 
-1. 在 HBuilderX 中新建 uni-app（Vue 3）空项目。
-2. 用 `app-service.js` 里的页面组件还原 `pages/` 下的 `.vue` 文件；样式直接取对应的 `.css`。
-3. 改完后用 HBuilderX 云打包 / 离线打包生成新 APK。
+```
+uniapp-project/
+├── App.vue              应用入口（含更新检查横幅）
+├── main.js              标准 uni-app Vue3 入口
+├── pages.json           6 个页面路由（含标题与 navigationStyle）
+├── manifest.json        原应用 manifest
+├── api/index.js         网络请求 + 账户 store（request / auth）
+├── pages/               6 个页面
+│   ├── login/login.vue
+│   ├── home/home.vue
+│   ├── tomato/tomato.vue
+│   ├── duoduosou/duoduosou.vue
+│   ├── duoduosou/movie.vue
+│   └── account/account.vue
+└── *.render.txt         对应页面还原前的原始渲染函数（对照用）
+```
 
-> `app-service.js` 是编译压缩产物，变量名被缩短但**未做混淆**，逻辑可读；`__uniappview.html`、`uni-app-view.umd.js` 是运行时，不要改。
+用法：HBuilderX 新建 uni-app（Vue 3）空项目 → 用本目录覆盖根目录 → 运行到手机/模拟器 → 云打包或离线打包。
+
+> 模板由 `app-service.js` 中的 Vue 渲染函数（`createElementVNode` / `renderList` / `withDirectives` / `withModifiers` 等）自动反解，已 100% 还原为 `v-if` / `v-else` / `v-for` / `v-model` / `@click.stop` / `{{ }}` 等模板语法，无 `TODO` 残留。变量名沿用编译产物（如 `a`、`l`、`o`），未做语义化重命名。
 
 ### 路线 B：改原生层（权限、SDK、Manifest）
 

@@ -1,0 +1,75 @@
+// login.vue 的原始渲染函数（还原前的编译产物，模板若有 <!-- TODO --> 请对照这里手工补全）
+
+e.openBlock(), e.createElementBlock("view", {
+            class: "page"
+          }, [e.createElementVNode("view", {
+            class: "card"
+          }, [e.createElementVNode("view", {
+            class: "logo"
+          }, "🍅"), e.createElementVNode("text", {
+            class: "title"
+          }, "番茄系统"), e.createElementVNode("text", {
+            class: "sub"
+          }, "多平台内容搜索与下载"), e.createElementVNode("view", {
+            class: "tabs"
+          }, [e.createElementVNode("view", {
+            class: e.normalizeClass(["tab", {
+              on: "login" === a.value
+            }]),
+            onClick: r[0] || (r[0] = e => a.value = "login")
+          }, "登录", 2), e.createElementVNode("view", {
+            class: e.normalizeClass(["tab", {
+              on: "register" === a.value
+            }]),
+            onClick: r[1] || (r[1] = e => a.value = "register")
+          }, "注册", 2)]), s.value ? (e.openBlock(), e.createElementBlock("view", {
+            key: 0,
+            class: e.normalizeClass(["msg", c.value])
+          }, e.toDisplayString(s.value), 3)) : e.createCommentVNode("", !0), e.createElementVNode(
+            "view", {
+              class: "field"
+            }, [e.createElementVNode("text", {
+              class: "label"
+            }, "用户名"), e.withDirectives(e.createElementVNode("input", {
+              class: "inp",
+              "onUpdate:modelValue": r[2] || (r[2] = e => l.value = e),
+              placeholder: "3-32位小写字母、数字或下划线",
+              disabled: n.value
+            }, null, 8, ["disabled"]), [
+              [e.vModelText, l.value]
+            ])]), e.createElementVNode("view", {
+            class: "field"
+          }, [e.createElementVNode("text", {
+            class: "label"
+          }, "密码"), e.withDirectives(e.createElementVNode("input", {
+            class: "inp",
+            "onUpdate:modelValue": r[3] || (r[3] = e => o.value = e),
+            type: "password",
+            placeholder: "至少6位",
+            disabled: n.value
+          }, null, 8, ["disabled"]), [
+            [e.vModelText, o.value]
+          ])]), "register" === a.value ? (e.openBlock(), e.createElementBlock("view", {
+            key: 1,
+            class: "field"
+          }, [e.createElementVNode("text", {
+            class: "label"
+          }, "注册渠道"), e.createElementVNode("view", {
+            class: "inp"
+          }, [e.createElementVNode("text", null, "APP")]), e.createElementVNode("text", {
+            class: "dim fs-20"
+          }, "自动识别为APP注册")])) : e.createCommentVNode("", !0), e.createElementVNode("button", {
+            class: "btn",
+            disabled: n.value,
+            onClick: d
+          }, e.toDisplayString(n.value ? "请稍候..." : "login" === a.value ? "登 录" : "注 册"), 9, [
+            "disabled"
+          ]), i.value ? (e.openBlock(), e.createElementBlock("view", {
+            key: 2,
+            class: "auth-off"
+          }, [e.createElementVNode("text", {
+            class: "dim"
+          }, "服务器未启用账号系统"), e.createElementVNode("button", {
+            class: "btn sec",
+            onClick: m
+          }, "直接进入")])) : e.createCommentVNode("", !0)])])

@@ -1,0 +1,117 @@
+// account.vue 的原始渲染函数（还原前的编译产物，模板若有 <!-- TODO --> 请对照这里手工补全）
+
+e.openBlock(), e.createElementBlock("view", {
+              class: "page"
+            }, [e.createElementVNode("view", {
+              class: "hdr flex-between"
+            }, [e.createElementVNode("text", {
+              class: "hdr-back",
+              onClick: k
+            }, "← 返回"), e.createElementVNode("text", {
+              class: "hdr-title"
+            }, "我的账户"), e.createElementVNode("view", {
+              style: {
+                width: "80rpx"
+              }
+            })]), e.createElementVNode("scroll-view", {
+              "scroll-y": "",
+              class: "body"
+            }, [e.createElementVNode("view", {
+              class: "card"
+            }, [e.createElementVNode("text", {
+              class: "card-title"
+            }, "账户信息"), e.createElementVNode("view", {
+              class: "row"
+            }, [e.createElementVNode("text", {
+              class: "r-label"
+            }, "用户名"), e.createElementVNode("text", {
+                class: "r-val"
+              }, e.toDisplayString((null == (g = e.unref(r).user) ? void 0 : g.username) || "-"),
+              1)]), e.createElementVNode("view", {
+              class: "row"
+            }, [e.createElementVNode("text", {
+              class: "r-label"
+            }, "会员到期"), e.createElementVNode("text", {
+              class: e.normalizeClass(["r-val", e.unref(r).membershipActive() ? "" : "danger"])
+            }, e.toDisplayString(u.value), 3)]), e.createElementVNode("view", {
+              class: "row"
+            }, [e.createElementVNode("text", {
+              class: "r-label"
+            }, "剩余下载"), e.createElementVNode("text", {
+              class: "r-val"
+            }, e.toDisplayString((null == (y = e.unref(r).user) ? void 0 : y
+              .downloads_remaining) ?? 0) + " 次", 1)])]), e.createElementVNode("view", {
+              class: "card"
+            }, [e.createElementVNode("text", {
+                class: "card-title"
+              }, "卡密充值"), e.createElementVNode("view", {
+                class: "field"
+              }, [e.withDirectives(e.createElementVNode("input", {
+                class: "inp",
+                "onUpdate:modelValue": s[0] || (s[0] = e => a.value = e),
+                placeholder: "请输入卡密",
+                disabled: o.value
+              }, null, 8, ["disabled"]), [
+                [e.vModelText, a.value]
+              ])]), e.createElementVNode("button", {
+                class: "btn",
+                disabled: o.value || !a.value.trim(),
+                onClick: m
+              }, "充值", 8, ["disabled"]), l.value ? (e.openBlock(), e.createElementBlock("view", {
+                key: 0,
+                class: "tip-ok"
+              }, " +" + e.toDisplayString(l.value.days) + "天 +" + e.toDisplayString(l.value
+                .downloads) + "次" + e.toDisplayString(l.value.is_monthly ? "（月卡）" : ""), 1)) : e
+              .createCommentVNode("", !0)
+            ]), n.value.length ? (e.openBlock(), e.createElementBlock("view", {
+              key: 0,
+              class: "card"
+            }, [e.createElementVNode("text", {
+              class: "card-title"
+            }, "已生效卡密"), (e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(n
+              .value, (t => (e.openBlock(), e.createElementBlock("view", {
+                key: t.id,
+                class: "pool-row"
+              }, [e.createElementVNode("view", {
+                  class: "flex-between"
+                }, [e.createElementVNode("text", {
+                  class: "pool-code"
+                }, e.toDisplayString(t.code || "卡密"), 1), e.createElementVNode(
+                  "text", {
+                    class: e.normalizeClass(["pool-st", t.remaining > 0 ? "s-ok" :
+                      "s-off"
+                    ])
+                  }, e.toDisplayString(t.remaining > 0 ? "生效中" : "已用尽"), 3)]), e
+                .createElementVNode("view", {
+                  class: "pool-det"
+                }, [e.createElementVNode("text", {
+                    class: "dim"
+                  }, "剩余: " + e.toDisplayString(t.remaining) + "次", 1), e
+                  .createElementVNode("text", {
+                    class: "dim ml-20"
+                  }, "到期: " + e.toDisplayString(d(t.expires_at)), 1)
+                ])
+              ])))), 128))])) : e.createCommentVNode("", !0), c.value ? (e.openBlock(), e
+              .createElementBlock("view", {
+                key: 1,
+                class: "card"
+              }, [e.createElementVNode("text", {
+                class: "card-title"
+              }, "系统公告"), e.createElementVNode("text", {
+                class: "dim notice-text"
+              }, e.toDisplayString(c.value), 1)])) : e.createCommentVNode("", !0), i.value ? (e
+              .openBlock(), e.createElementBlock("view", {
+                key: 2,
+                class: "card"
+              }, [e.createElementVNode("text", {
+                class: "card-title"
+              }, "月卡购买"), e.createElementVNode("button", {
+                class: "btn sec",
+                onClick: v
+              }, "查看购买链接")])) : e.createCommentVNode("", !0), e.createElementVNode("view", {
+              class: "card"
+            }, [e.createElementVNode("button", {
+              class: "btn sec danger",
+              onClick: p
+            }, "退出登录")])])])
+          

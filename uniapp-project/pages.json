@@ -1,0 +1,52 @@
+{
+  "pages": [
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "番茄系统",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "番茄系统",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tomato/tomato",
+      "style": {
+        "navigationBarTitleText": "番茄小说",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/duoduosou/duoduosou",
+      "style": {
+        "navigationBarTitleText": "多多盘",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/duoduosou/movie",
+      "style": {
+        "navigationBarTitleText": "影片详情",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/account/account",
+      "style": {
+        "navigationBarTitleText": "我的账户",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "番茄系统",
+    "navigationBarBackgroundColor": "#FF5A5F",
+    "backgroundColor": "#F5F5F5"
+  }
+}

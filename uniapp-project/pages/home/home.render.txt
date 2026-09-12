@@ -1,0 +1,52 @@
+// home.vue 的原始渲染函数（还原前的编译产物，模板若有 <!-- TODO --> 请对照这里手工补全）
+
+e.openBlock(), e.createElementBlock("view", {
+              class: "page"
+            }, [e.createElementVNode("view", {
+              class: "hdr flex-between"
+            }, [e.createElementVNode("text", {
+              class: "hdr-title"
+            }, "番茄系统"), e.createElementVNode("view", {
+              class: "hdr-right"
+            }, [e.createElementVNode("text", {
+                class: "hdr-user",
+                onClick: n
+              }, e.toDisplayString((null == (i = e.unref(r).user) ? void 0 : i.username) || ""), 1), e
+              .createElementVNode("text", {
+                class: "hdr-out",
+                onClick: s
+              }, "退出")
+            ])]), e.unref(r).user ? (e.openBlock(), e.createElementBlock("view", {
+              key: 0,
+              class: "info"
+            }, [e.createElementVNode("text", null, "会员到期: " + e.toDisplayString(a.value), 1), e
+              .createElementVNode("text", null, "剩余下载: " + e.toDisplayString(e.unref(r).user
+                .downloads_remaining ?? 0) + " 次", 1)
+            ])) : e.createCommentVNode("", !0), e.createElementVNode("view", {
+              class: "plat",
+              onClick: l
+            }, [e.createElementVNode("text", {
+              class: "plat-icon"
+            }, "🍅"), e.createElementVNode("view", {
+              class: "plat-body"
+            }, [e.createElementVNode("text", {
+              class: "plat-name"
+            }, "番茄小说"), e.createElementVNode("text", {
+              class: "plat-desc"
+            }, "链接解析、下载任务管理、本机书籍浏览")]), e.createElementVNode("text", {
+              class: "plat-arr"
+            }, "▶")]), e.createElementVNode("view", {
+              class: "plat",
+              onClick: o
+            }, [e.createElementVNode("text", {
+              class: "plat-icon"
+            }, "📦"), e.createElementVNode("view", {
+              class: "plat-body"
+            }, [e.createElementVNode("text", {
+              class: "plat-name"
+            }, "多多盘"), e.createElementVNode("text", {
+              class: "plat-desc"
+            }, "搜索网盘资源（夸克/百度/迅雷/UC）— 广播剧/有声剧/小说/漫画")]), e.createElementVNode("text", {
+              class: "plat-arr"
+            }, "▶")])])
+          

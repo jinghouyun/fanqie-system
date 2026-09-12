@@ -1,0 +1,143 @@
+// movie.vue 的原始渲染函数（还原前的编译产物，模板若有 <!-- TODO --> 请对照这里手工补全）
+
+e.openBlock(), e.createElementBlock("view", {
+            class: "page"
+          }, [e.createElementVNode("view", {
+            class: "hdr flex-between"
+          }, [e.createElementVNode("text", {
+            class: "hdr-back",
+            onClick: n
+          }, "← 返回"), e.createElementVNode("text", {
+            class: "hdr-title"
+          }, e.toDisplayString(a.value ? "加载中..." : "影片详情"), 1), e.createElementVNode("text", {
+            class: "hdr-right"
+          })]), a.value ? (e.openBlock(), e.createElementBlock("view", {
+            key: 0,
+            class: "empty"
+          }, [e.createElementVNode("text", {
+            class: "dim"
+          }, "加载中...")])) : l.value ? (e.openBlock(), e.createElementBlock(e.Fragment, {
+            key: 1
+          }, [e.createElementVNode("view", {
+            class: "hero"
+          }, [e.createElementVNode("view", {
+            class: "poster"
+          }, [l.value.cover ? (e.openBlock(), e.createElementBlock("image", {
+            key: 0,
+            class: "p-img",
+            src: l.value.cover,
+            mode: "aspectFill"
+          }, null, 8, ["src"])) : (e.openBlock(), e.createElementBlock("view", {
+            key: 1,
+            class: "p-img p-ph"
+          }, [e.createElementVNode("text", {
+            class: "p-ph-txt"
+          }, "🎬")]))]), e.createElementVNode("view", {
+            class: "info"
+          }, [e.createElementVNode("text", {
+              class: "title"
+            }, e.toDisplayString(l.value.title), 1), e.createElementVNode("view", {
+              class: "meta"
+            }, [(e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(l.value
+              .meta, ((t, a) => (e.openBlock(), e.createElementBlock("text", {
+                key: a,
+                class: "meta-item"
+              }, e.toDisplayString(t), 1)))), 128))]), l.value.desc ? (e.openBlock(), e
+              .createElementBlock("text", {
+                key: 0,
+                class: "desc"
+              }, e.toDisplayString(l.value.desc), 1)) : e.createCommentVNode("", !0), l.value
+            .playUrl ? (e.openBlock(), e.createElementBlock("button", {
+              key: 1,
+              class: "play-btn",
+              onClick: s[0] || (s[0] = e => c(l.value.playUrl))
+            }, "立即播放")) : e.createCommentVNode("", !0)
+          ])]), l.value.disks && l.value.disks.length ? (e.openBlock(), e.createElementBlock("view", {
+            key: 0,
+            class: "disks"
+          }, [(e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(l.value.disks, (
+            (t, a) => (e.openBlock(), e.createElementBlock("view", {
+              key: a,
+              class: "disk-panel"
+            }, [e.createElementVNode("view", {
+              class: "disk-head"
+            }, [e.createElementVNode("text", {
+              class: "disk-title"
+            }, e.toDisplayString(t.title), 1), t.notice ? (e.openBlock(), e
+              .createElementBlock("text", {
+                key: 0,
+                class: "disk-notice"
+              }, e.toDisplayString(t.notice), 1)) : e.createCommentVNode("", !0)]), (e
+              .openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(t
+                .items, ((t, a) => (e.openBlock(), e.createElementBlock("view", {
+                  key: a,
+                  class: e.normalizeClass(["disk-item", "disk-item--" + t
+                    .type
+                  ]),
+                  onClick: e => r(t)
+                }, [e.createElementVNode("text", {
+                  class: "disk-name"
+                }, e.toDisplayString(t.name), 1), t._shareUrl ? (e
+                  .openBlock(), e.createElementBlock(e.Fragment, {
+                    key: 0
+                  }, [e.createElementVNode("text", {
+                      class: "disk-url",
+                      "user-select": ""
+                    }, e.toDisplayString(t._shareUrl), 1), e
+                    .createElementVNode("button", {
+                      class: "btn-sm",
+                      onClick: e.withModifiers((e => i(t._shareUrl)), [
+                        "stop"
+                      ])
+                    }, "复制", 8, ["onClick"])
+                  ], 64)) : t.cachedShareUrl ? (e.openBlock(), e
+                  .createElementBlock(e.Fragment, {
+                    key: 1
+                  }, [e.createElementVNode("text", {
+                      class: "disk-url",
+                      "user-select": ""
+                    }, e.toDisplayString(t.cachedShareUrl), 1), e
+                    .createElementVNode("button", {
+                      class: "btn-sm",
+                      onClick: e.withModifiers((e => i(t
+                        .cachedShareUrl)), ["stop"])
+                    }, "复制", 8, ["onClick"])
+                  ], 64)) : t._saving ? (e.openBlock(), e
+                  .createElementBlock("text", {
+                    key: 2,
+                    class: "dim"
+                  }, "转存中...")) : (e.openBlock(), e.createElementBlock(
+                  "button", {
+                    key: 3,
+                    class: "btn-sm btn-green"
+                  }, "转存获取分享链接"))], 10, ["onClick"])))), 128))])))), 128))])) : e.createCommentVNode("",
+            !0), l.value.related && l.value.related.length ? (e.openBlock(), e.createElementBlock(
+            "view", {
+              key: 1,
+              class: "related"
+            }, [e.createElementVNode("text", {
+              class: "rel-title"
+            }, "推荐影片"), e.createElementVNode("view", {
+              class: "rel-grid"
+            }, [(e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(l.value
+              .related, ((t, a) => (e.openBlock(), e.createElementBlock("view", {
+                key: a,
+                class: "rel-card",
+                onClick: e => o(t.detailUrl)
+              }, [t.cover ? (e.openBlock(), e.createElementBlock("image", {
+                key: 0,
+                class: "rel-cover",
+                src: t.cover,
+                mode: "aspectFill"
+              }, null, 8, ["src"])) : (e.openBlock(), e.createElementBlock("view", {
+                key: 1,
+                class: "rel-cover rel-ph"
+              })), e.createElementVNode("text", {
+                class: "rel-name"
+              }, e.toDisplayString(t.title), 1)], 8, ["onClick"])))), 128))])])) : e.createCommentVNode(
+            "", !0)], 64)) : (e.openBlock(), e.createElementBlock("view", {
+            key: 2,
+            class: "empty"
+          }, [e.createElementVNode("text", {
+            class: "dim"
+          }, "影片信息加载失败")]))])

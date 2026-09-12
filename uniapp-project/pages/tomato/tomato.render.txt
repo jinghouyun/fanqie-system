@@ -1,0 +1,208 @@
+// tomato.vue 的原始渲染函数（还原前的编译产物，模板若有 <!-- TODO --> 请对照这里手工补全）
+
+e.openBlock(), e.createElementBlock("view", {
+            class: "page"
+          }, [e.createElementVNode("view", {
+            class: "hdr flex-between"
+          }, [e.createElementVNode("text", {
+            class: "hdr-back",
+            onClick: T
+          }, "← 返回"), e.createElementVNode("text", {
+            class: "hdr-title"
+          }, "番茄小说"), e.createElementVNode("text", {
+            class: "hdr-right",
+            onClick: U
+          }, "账户")]), n.value ? (e.openBlock(), e.createElementBlock("view", {
+            key: 0,
+            class: "quota-bar"
+          }, [e.createElementVNode("text", {
+              class: "dim"
+            }, "今日免费: " + e.toDisplayString(n.value.used) + "/" + e.toDisplayString(n.value.limit) +
+            " 次", 1), n.value.remaining <= 0 ? (e.openBlock(), e.createElementBlock("text", {
+            key: 0,
+            class: "warn"
+          }, "次数已用完")) : e.createCommentVNode("", !0)])) : e.createCommentVNode("", !0), e.createElementVNode(
+            "view", {
+              class: "tabs"
+            }, [e.createElementVNode("view", {
+              class: e.normalizeClass(["tab", {
+                on: "search" === a.value
+              }]),
+              onClick: l[0] || (l[0] = e => a.value = "search")
+            }, "搜索", 2), e.createElementVNode("view", {
+              class: e.normalizeClass(["tab", {
+                on: "tasks" === a.value
+              }]),
+              onClick: b
+            }, [e.createTextVNode(" 任务 "), h.value ? (e.openBlock(), e.createElementBlock("text", {
+              key: 0,
+              class: "badge"
+            }, e.toDisplayString(h.value), 1)) : e.createCommentVNode("", !0)], 2)]), "search" === a.value ? (
+            e.openBlock(), e.createElementBlock("view", {
+              key: 1,
+              class: "body"
+            }, [y.value ? (e.openBlock(), e.createElementBlock("view", {
+                key: 0,
+                class: "top-notice"
+              }, [e.createElementVNode("text", {
+                class: "top-notice-text"
+              }, e.toDisplayString(y.value), 1)])) : e.createCommentVNode("", !0), e.createElementVNode(
+                "view", {
+                  class: "search-bar"
+                }, [e.withDirectives(e.createElementVNode("input", {
+                  class: "inp",
+                  "onUpdate:modelValue": l[1] || (l[1] = e => i.value = e),
+                  placeholder: "输入书名搜索...",
+                  "confirm-type": "search",
+                  onConfirm: E
+                }, null, 544), [
+                  [e.vModelText, i.value]
+                ]), e.createElementVNode("button", {
+                  class: "s-btn",
+                  disabled: u.value || !i.value.trim(),
+                  onClick: E
+                }, e.toDisplayString(u.value ? ".." : "搜索"), 9, ["disabled"])]), d.value.length ? (e
+                .openBlock(), e.createElementBlock("view", {
+                  key: 1,
+                  class: "results"
+                }, [e.createElementVNode("text", {
+                  class: "dim mb-16"
+                }, "共 " + e.toDisplayString(d.value.length) + " 本", 1), (e.openBlock(!0), e
+                  .createElementBlock(e.Fragment, null, e.renderList(d.value, (t => (e.openBlock(), e
+                    .createElementBlock("view", {
+                      key: t.book_id,
+                      class: "book"
+                    }, [t.thumb_url ? (e.openBlock(), e.createElementBlock("image", {
+                        key: 0,
+                        class: "cover",
+                        src: t.thumb_url,
+                        mode: "aspectFill"
+                      }, null, 8, ["src"])) : e.createCommentVNode("", !0), e
+                      .createElementVNode("view", {
+                        class: "b-info"
+                      }, [e.createElementVNode("text", {
+                        class: "b-name"
+                      }, e.toDisplayString(t.book_name), 1), e.createElementVNode("text", {
+                        class: "b-author"
+                      }, e.toDisplayString(t.author), 1), e.createElementVNode("view", {
+                        class: "b-tags"
+                      }, [t.word_number ? (e.openBlock(), e.createElementBlock("text", {
+                          key: 0,
+                          class: "tag"
+                        }, e.toDisplayString(x(t.word_number)) + "字", 1)) : e
+                        .createCommentVNode("", !0), t.serial_count ? (e.openBlock(), e
+                          .createElementBlock("text", {
+                            key: 1,
+                            class: "tag"
+                          }, e.toDisplayString(t.serial_count) + "章", 1)) : e
+                        .createCommentVNode("", !0), t.score ? (e.openBlock(), e
+                          .createElementBlock("text", {
+                            key: 2,
+                            class: "tag score"
+                          }, "★" + e.toDisplayString(t.score), 1)) : e.createCommentVNode(
+                          "", !0), e.createElementVNode("text", {
+                            class: e.normalizeClass(["tag", "1" === t.creation_status ?
+                              "t-done" : "t-serial"
+                            ])
+                          }, e.toDisplayString("1" === t.creation_status ? "完结" : "连载"),
+                          3)
+                      ]), e.createElementVNode("text", {
+                        class: "b-desc"
+                      }, e.toDisplayString(t.abstract || ""), 1)]), e.createElementVNode(
+                        "view", {
+                          class: "b-foot flex-between"
+                        }, [e.createElementVNode("text", {
+                            class: "dim fs-22"
+                          }, e.toDisplayString(t.read_count ? C(t.read_count) + "人" : ""), 1), e
+                          .createElementVNode("button", {
+                            class: "btn-sm",
+                            onClick: e.withModifiers((e => w(t)), ["stop"])
+                          }, "下载全书", 8, ["onClick"])
+                        ])
+                    ])))), 128))])) : e.createCommentVNode("", !0), u.value || d.value.length || !m.value ?
+              e.createCommentVNode("", !0) : (e.openBlock(), e.createElementBlock("view", {
+                key: 2,
+                class: "empty"
+              }, [e.createElementVNode("text", {
+                class: "empty-icon"
+              }, "📭"), e.createElementVNode("text", {
+                class: "empty-text"
+              }, "未找到相关内容")])), m.value ? e.createCommentVNode("", !0) : (e.openBlock(), e
+                .createElementBlock("view", {
+                  key: 3,
+                  class: "empty"
+                }, [e.createElementVNode("text", {
+                  class: "empty-icon"
+                }, "🍅"), e.createElementVNode("text", {
+                  class: "empty-text"
+                }, "搜索番茄小说")]))
+            ])) : e.createCommentVNode("", !0), "tasks" === a.value ? (e.openBlock(), e.createElementBlock(
+            "view", {
+              key: 2,
+              class: "body"
+            }, [p.value.length || k.value ? e.createCommentVNode("", !0) : (e.openBlock(), e
+              .createElementBlock("view", {
+                key: 0,
+                class: "empty"
+              }, [e.createElementVNode("text", {
+                class: "empty-icon"
+              }, "📋"), e.createElementVNode("text", {
+                class: "empty-text"
+              }, "暂无下载任务")])), (e.openBlock(!0), e.createElementBlock(e.Fragment, null, e.renderList(p
+              .value, (t => {
+                return e.openBlock(), e.createElementBlock("view", {
+                  key: t.id || t.task_id,
+                  class: "card task"
+                }, [e.createElementVNode("view", {
+                    class: "flex-between"
+                  }, [e.createElementVNode("text", {
+                    class: "t-name"
+                  }, e.toDisplayString(t.book_name || t.task_id), 1), e.createElementVNode(
+                    "text", {
+                      class: e.normalizeClass(["t-st", "ts-" + t.state])
+                    }, e.toDisplayString((a = t.state, {
+                      pending: "等待中",
+                      running: "下载中",
+                      done: "已完成",
+                      failed: "失败"
+                    } [a] || a || "下载中")), 3)]), t.book_id ? (e.openBlock(), e
+                    .createElementBlock("text", {
+                      key: 0,
+                      class: "dim fs-22"
+                    }, "书号: " + e.toDisplayString(t.book_id), 1)) : e.createCommentVNode("", !
+                    0), null != t.progress && "done" !== t.state ? (e.openBlock(), e
+                    .createElementBlock("view", {
+                      key: 1,
+                      class: "prog"
+                    }, [e.createElementVNode("view", {
+                      class: "prog-bar"
+                    }, [e.createElementVNode("view", {
+                      class: "prog-fill",
+                      style: e.normalizeStyle({
+                        width: (t.progress || 0) + "%"
+                      })
+                    }, null, 4)]), e.createElementVNode("text", {
+                      class: "dim fs-22"
+                    }, e.toDisplayString(Math.round(t.progress || 0)) + "%", 1)])) : e
+                  .createCommentVNode("", !0), null != t.done && t.total ? (e.openBlock(), e
+                    .createElementBlock("text", {
+                        key: 2,
+                        class: "dim fs-22"
+                      }, "章节: " + e.toDisplayString(t.done) + "/" + e.toDisplayString(t.total),
+                      1)) : e.createCommentVNode("", !0), t.created_at ? (e.openBlock(), e
+                    .createElementBlock("text", {
+                      key: 3,
+                      class: "dim fs-22"
+                    }, "创建: " + e.toDisplayString(D(t.created_at)), 1)) : e.createCommentVNode(
+                    "", !0), "done" === t.state ? (e.openBlock(), e.createElementBlock(
+                    "button", {
+                      key: 4,
+                      class: "btn-sm",
+                      style: {
+                        "margin-top": "14rpx"
+                      },
+                      onClick: e => S(t)
+                    }, "打开下载", 8, ["onClick"])) : e.createCommentVNode("", !0)
+                ]);
+                var a
+              })), 128))])) : e.createCommentVNode("", !0)])
