@@ -1,0 +1,28 @@
+package io.dcloud.feature.barcode2.decoding;
+
+import android.app.Activity;
+import android.content.DialogInterface;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes.dex */
+public final class FinishListener implements DialogInterface.OnClickListener, DialogInterface.OnCancelListener, Runnable {
+    private final Activity activityToFinish;
+
+    public FinishListener(Activity activity) {
+        this.activityToFinish = activity;
+    }
+
+    @Override // android.content.DialogInterface.OnCancelListener
+    public void onCancel(DialogInterface dialogInterface) {
+        run();
+    }
+
+    @Override // android.content.DialogInterface.OnClickListener
+    public void onClick(DialogInterface dialogInterface, int i) {
+        run();
+    }
+
+    @Override // java.lang.Runnable
+    public void run() {
+    }
+}

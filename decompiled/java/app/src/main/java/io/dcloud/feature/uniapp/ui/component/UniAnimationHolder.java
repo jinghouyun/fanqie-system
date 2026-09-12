@@ -1,0 +1,30 @@
+package io.dcloud.feature.uniapp.ui.component;
+
+import com.taobao.weex.WXSDKInstance;
+import com.taobao.weex.WXSDKManager;
+import com.taobao.weex.ui.action.GraphicActionAnimation;
+import com.taobao.weex.ui.animation.WXAnimationBean;
+import io.dcloud.feature.uniapp.AbsSDKInstance;
+import io.dcloud.feature.uniapp.ui.AbsAnimationHolder;
+import io.dcloud.feature.uniapp.ui.animation.UniAnimationBean;
+
+/* JADX INFO: compiled from: r8-map-id-b4716a25f9920722ba6f2d7f7c6f40e43a654927e8ebe1c489894a7bc6a88ab4 */
+/* JADX INFO: loaded from: classes2.dex */
+public class UniAnimationHolder implements AbsAnimationHolder {
+    private String callback;
+    private WXAnimationBean wxAnimationBean;
+
+    public UniAnimationHolder(UniAnimationBean uniAnimationBean, String str) {
+        this.wxAnimationBean = uniAnimationBean;
+        this.callback = str;
+    }
+
+    @Override // io.dcloud.feature.uniapp.ui.AbsAnimationHolder
+    public void execute(AbsSDKInstance absSDKInstance, AbsBasicComponent absBasicComponent) {
+        if (absSDKInstance == null || absBasicComponent == null) {
+            return;
+        }
+        GraphicActionAnimation graphicActionAnimation = new GraphicActionAnimation((WXSDKInstance) absSDKInstance, absBasicComponent.getRef(), this.wxAnimationBean, this.callback);
+        WXSDKManager.getInstance().getWXRenderManager().postGraphicAction(graphicActionAnimation.getPageId(), graphicActionAnimation);
+    }
+}
