@@ -31,6 +31,8 @@
 
 ## 目录结构
 
+> 仓库共 **22918 个文件 / 30 个提交**，工作区约 294 MB（历史 pack 约 70 MB）。
+
 ```
 .
 ├── original/                       # 原始 APK（便于对照）
@@ -39,11 +41,13 @@
 │   │   ├── AndroidManifest.xml     #    解码后的清单文件
 │   │   ├── apktool.yml             #    apktool 工程元数据（回编译必需）
 │   │   ├── res/                    #    解码后的资源
-│   │   ├── smali/                  #    classes.dex 的 smali 代码
-│   │   └── smali_classes2/         #    classes2.dex 的 smali 代码
+│   │   ├── smali/                  #    classes.dex 的 smali 代码（7949 个文件）
+│   │   ├── smali_classes2/         #    classes2.dex 的 smali 代码（6215 个文件）
+│   │   ├── lib/                    #    native .so（weex / imagepipeline / breakpad 等）
+│   │   └── assets/                 #    应用内资源（含 uni-app 运行时与加固壳 dex）
 │   ├── java/                       # ② jadx 导出的 Gradle Android 工程
 │   │   ├── build.gradle / settings.gradle
-│   │   └── app/src/main/java/      #    可读 Java 源码（约 5400 个类）
+│   │   └── app/src/main/java/      #    可读 Java 源码（6995 个文件）
 │   └── uniapp-www/                 # ③ uni-app 业务层（真正的业务逻辑）
 │       └── __UNI__34AA080/www/
 │           ├── app-service.js      #    全部页面的 Vue 组件逻辑（已格式化）
@@ -95,6 +99,7 @@ apksigner sign --ks my.keystore --ks-key-alias fanqie --out dist/番茄系统_si
 ## 注意事项
 
 - 反编译产物**不能 100% 还原原始源码**：注释、原始变量名、Gradle 依赖、签名信息均已丢失。
+- `decompiled/java/app/src/main/lib/` 是 jadx 输出的 native .so 副本（45 MB），与 `decompiled/apktool/lib/` 完全重复且不在 Gradle 的 jniLibs 路径上，已通过 `.gitignore` 排除。
 - jadx 报告 **93 个类**反编译失败，遇到这些类请回退看 `decompiled/apktool/smali*/` 下的 smali。
 - APK 内含 `assets/39285EFA.dex` 与 `lib/*/lib39285EFA.so`（常见加固壳特征），改 smali 回编译前**先移除加固相关壳代码**，否则可能无法启动。
 - 原 APK 的签名已失效，回编译后必须重新签名才能安装。
