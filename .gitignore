@@ -21,3 +21,7 @@ Thumbs.db
 # 反编译工具缓存
 *.jobf
 apktool.jar
+
+# jadx 输出的 native libs 副本 (45MB)，与 decompiled/apktool/lib/ 完全重复，
+# 且路径 app/src/main/lib 并非 Gradle 的 jniLibs，不会被打包，故不入库
+decompiled/java/app/src/main/lib/
