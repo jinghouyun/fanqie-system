@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/videoContainer"
+            android:background="#00ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textSize="14sp"
+            android:textColor="#ffffffff"
+            android:gravity="center"
+            android:id="@+id/skipView"
+            android:background="@drawable/dcloud_ad_custom_ad_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="12dp"
+            android:text="跳过"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:textSize="10sp"
+            android:textColor="#ffcccccc"
+            android:id="@+id/privacyInfo"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text=""
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</FrameLayout>
