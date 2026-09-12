@@ -1,0 +1,17 @@
+.class public interface abstract Lio/dcloud/feature/nativeObj/richtext/span/ClickSpanAble;
+.super Ljava/lang/Object;
+.source "r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843"
+
+
+# virtual methods
+.method public abstract getHref()Ljava/lang/String;
+.end method
+
+.method public abstract getOnClickEvent()Ljava/lang/String;
+.end method
+
+.method public abstract hasClickEvent()Z
+.end method
+
+.method public abstract onClick(Landroid/view/View;Lio/dcloud/common/DHInterface/IWebview;)V
+.end method

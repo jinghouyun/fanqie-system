@@ -1,0 +1,107 @@
+.class Lio/dcloud/common/core/ui/a$m;
+.super Ljava/lang/Object;
+.source "r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843"
+
+# interfaces
+.implements Ljava/util/Comparator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lio/dcloud/common/core/ui/a;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = "m"
+.end annotation
+
+
+# instance fields
+.field final synthetic a:Lio/dcloud/common/core/ui/a;
+
+
+# direct methods
+.method constructor <init>(Lio/dcloud/common/core/ui/a;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lio/dcloud/common/core/ui/a$m;->a:Lio/dcloud/common/core/ui/a;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Lio/dcloud/common/core/ui/b;Lio/dcloud/common/core/ui/b;)I
+    .locals 6
+
+    .line 1
+    invoke-virtual {p1}, Lio/dcloud/common/adapter/ui/AdaFrameView;->getFrameType()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x3
+
+    if-ne v0, v2, :cond_0
+
+    return v1
+
+    .line 2
+    :cond_0
+    invoke-virtual {p2}, Lio/dcloud/common/adapter/ui/AdaFrameView;->getFrameType()I
+
+    move-result v0
+
+    const/4 v3, -0x1
+
+    if-ne v0, v2, :cond_1
+
+    return v3
+
+    .line 3
+    :cond_1
+    iget v0, p1, Lio/dcloud/common/adapter/ui/AdaFrameItem;->mZIndex:I
+
+    iget v2, p2, Lio/dcloud/common/adapter/ui/AdaFrameItem;->mZIndex:I
+
+    sub-int/2addr v0, v2
+
+    if-nez v0, :cond_3
+
+    .line 5
+    iget-wide v4, p1, Lio/dcloud/common/adapter/ui/AdaFrameItem;->lastShowTime:J
+
+    iget-wide p1, p2, Lio/dcloud/common/adapter/ui/AdaFrameItem;->lastShowTime:J
+
+    cmp-long v0, v4, p1
+
+    if-lez v0, :cond_2
+
+    return v1
+
+    :cond_2
+    return v3
+
+    :cond_3
+    return v0
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    .line 1
+    check-cast p1, Lio/dcloud/common/core/ui/b;
+
+    check-cast p2, Lio/dcloud/common/core/ui/b;
+
+    invoke-virtual {p0, p1, p2}, Lio/dcloud/common/core/ui/a$m;->a(Lio/dcloud/common/core/ui/b;Lio/dcloud/common/core/ui/b;)I
+
+    move-result p1
+
+    return p1
+.end method
