@@ -1,0 +1,34 @@
+package io.dcloud.api.custom.base;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes.dex */
+public class UniAdConst {
+
+    /* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+    public static class AdType {
+        public static final int TYPE_CONTENT = 14;
+        public static final int TYPE_DRAW = 10;
+        public static final int TYPE_FLOW = 4;
+        public static final int TYPE_FULLSCREEN = 7;
+        public static final int TYPE_INTERSTITIAL = 15;
+        public static final int TYPE_NATIVE = 4;
+        public static final int TYPE_NONE = -1;
+        public static final int TYPE_REWARD = 9;
+        public static final int TYPE_SPLASH = 1;
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+    public static class BidType {
+        public static final int BID_CLIENT = 1;
+        public static final int BID_NONE = 0;
+        public static final int BID_SERVER = 2;
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+    public @interface CustomAdType {
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+    public @interface CustomBidType {
+    }
+}
