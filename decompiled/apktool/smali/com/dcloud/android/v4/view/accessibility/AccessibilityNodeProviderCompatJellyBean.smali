@@ -1,0 +1,33 @@
+.class Lcom/dcloud/android/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean;
+.super Ljava/lang/Object;
+.source "r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/dcloud/android/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static newAccessibilityNodeProviderBridge(Lcom/dcloud/android/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/dcloud/android/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$1;
+
+    invoke-direct {v0, p0}, Lcom/dcloud/android/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$1;-><init>(Lcom/dcloud/android/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;)V
+
+    return-object v0
+.end method
