@@ -1,0 +1,26 @@
+package com.taobao.weex.adapter;
+
+import android.content.Context;
+import com.taobao.weex.WXSDKInstance;
+import com.taobao.weex.common.WXModule;
+import com.taobao.weex.ui.component.WXComponent;
+
+/* JADX INFO: compiled from: r8-map-id-b4716a25f9920722ba6f2d7f7c6f40e43a654927e8ebe1c489894a7bc6a88ab4 */
+/* JADX INFO: loaded from: classes.dex */
+public class ClassLoaderAdapter {
+    public Class<? extends WXComponent> getComponentClass(String str, String str2, WXSDKInstance wXSDKInstance) {
+        try {
+            return wXSDKInstance.getContext().getClassLoader().loadClass(str2);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Class<? extends WXModule> getModuleClass(String str, String str2, Context context) {
+        try {
+            return context.getClassLoader().loadClass(str2);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

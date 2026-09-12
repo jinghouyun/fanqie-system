@@ -1,0 +1,32 @@
+package com.dcloud.zxing2.aztec;
+
+import com.dcloud.zxing2.ResultPoint;
+import com.dcloud.zxing2.common.BitMatrix;
+import com.dcloud.zxing2.common.DetectorResult;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes.dex */
+public final class AztecDetectorResult extends DetectorResult {
+    private final boolean compact;
+    private final int nbDatablocks;
+    private final int nbLayers;
+
+    public AztecDetectorResult(BitMatrix bitMatrix, ResultPoint[] resultPointArr, boolean z, int i, int i2) {
+        super(bitMatrix, resultPointArr);
+        this.compact = z;
+        this.nbDatablocks = i;
+        this.nbLayers = i2;
+    }
+
+    public int getNbDatablocks() {
+        return this.nbDatablocks;
+    }
+
+    public int getNbLayers() {
+        return this.nbLayers;
+    }
+
+    public boolean isCompact() {
+        return this.compact;
+    }
+}

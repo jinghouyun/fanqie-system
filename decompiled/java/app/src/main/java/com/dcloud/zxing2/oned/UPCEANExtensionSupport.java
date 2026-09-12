@@ -1,0 +1,26 @@
+package com.dcloud.zxing2.oned;
+
+import com.dcloud.zxing2.NotFoundException;
+import com.dcloud.zxing2.ReaderException;
+import com.dcloud.zxing2.Result;
+import com.dcloud.zxing2.common.BitArray;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes.dex */
+final class UPCEANExtensionSupport {
+    private static final int[] EXTENSION_START_PATTERN = {1, 1, 2};
+    private final UPCEANExtension2Support twoSupport = new UPCEANExtension2Support();
+    private final UPCEANExtension5Support fiveSupport = new UPCEANExtension5Support();
+
+    UPCEANExtensionSupport() {
+    }
+
+    Result decodeRow(int i, BitArray bitArray, int i2) throws NotFoundException {
+        int[] iArrFindGuardPattern = UPCEANReader.findGuardPattern(bitArray, i2, false, EXTENSION_START_PATTERN);
+        try {
+            return this.fiveSupport.decodeRow(i, bitArray, iArrFindGuardPattern);
+        } catch (ReaderException unused) {
+            return this.twoSupport.decodeRow(i, bitArray, iArrFindGuardPattern);
+        }
+    }
+}
