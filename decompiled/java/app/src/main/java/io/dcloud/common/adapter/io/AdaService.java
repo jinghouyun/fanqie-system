@@ -1,0 +1,30 @@
+package io.dcloud.common.adapter.io;
+
+import android.content.Context;
+import java.util.HashMap;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes.dex */
+public abstract class AdaService {
+    static final String TAG = "AdaService";
+    static HashMap<String, AdaService> mServicesHandler = new HashMap<>(2);
+    protected Context mContextWrapper;
+    private String mServiceName;
+
+    protected AdaService(Context context, String str) {
+        this.mContextWrapper = context;
+        this.mServiceName = str;
+    }
+
+    public static final AdaService getServiceListener(String str) {
+        return mServicesHandler.get(str);
+    }
+
+    public static final void removeServiceListener(String str) {
+        mServicesHandler.remove(str);
+    }
+
+    public abstract void onDestroy();
+
+    public abstract void onExecute();
+}
