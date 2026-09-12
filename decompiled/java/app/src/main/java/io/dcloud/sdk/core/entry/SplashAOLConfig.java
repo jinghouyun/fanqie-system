@@ -1,0 +1,42 @@
+package io.dcloud.sdk.core.entry;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes2.dex */
+@Deprecated
+public class SplashAOLConfig {
+    private int a;
+    private int b;
+
+    /* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+    public static final class Builder {
+        private int a;
+        private int b;
+
+        public SplashAOLConfig build() {
+            return new SplashAOLConfig(this);
+        }
+
+        public Builder height(int i) {
+            this.b = i;
+            return this;
+        }
+
+        public Builder width(int i) {
+            this.a = i;
+            return this;
+        }
+    }
+
+    public int getHeight() {
+        return this.b;
+    }
+
+    public int getWidth() {
+        return this.a;
+    }
+
+    private SplashAOLConfig(Builder builder) {
+        this.a = builder.a;
+        this.b = builder.b;
+    }
+}

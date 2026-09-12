@@ -1,0 +1,22 @@
+package io.dcloud.sdk.core.interfaces;
+
+import io.dcloud.sdk.core.module.DCBaseAOL;
+import java.util.List;
+
+/* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+/* JADX INFO: loaded from: classes2.dex */
+public interface IToggle {
+
+    /* JADX INFO: compiled from: r8-map-id-605b2a5c8742184084f62a640225086eefcd9237ae25847375566b7136421843 */
+    public interface CADLoadListener {
+        void onLoadFail(int i, String str);
+
+        void onLoadSuccess(List<? extends DCBaseAOL> list);
+    }
+
+    List<DCBaseAOL> getSuccessAds();
+
+    boolean isLoading();
+
+    void setCADLoadListener(CADLoadListener cADLoadListener);
+}
