@@ -1,0 +1,23 @@
+# Gradle / Android Studio
+.gradle/
+.idea/
+build/
+captures/
+local.properties
+*.iml
+*.apk
+!original/*.apk
+*.aab
+*.dex
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 反编译工具缓存
+*.jobf
+apktool.jar
